@@ -1,0 +1,23 @@
+READ ME
+
+1- Présentation du jeu
+	* Règles du jeu
+
+Le jeu du plus ou moins consiste à découvrir une combinaison à 4 chiffres (par défault ) en moins de 10 tours.
+Un "=" est affiché pour chaque chiffre se trouvant à la même position dans la combinaison à découvrir
+Un "+" indique que le chiffe proposé est inférieur à celui présent à cette position dans la combinaison
+enfin un "-"  indique que le chiffe proposé est spérieur à celui présent à cette position dans la combinaison.
+Le jeux comporte 3 modes
+		- mode challenger:
+		trouvez la combinaison de l'ordiantaur (4 chiffres par défault) en moins de 10 tours
+		-mode challenger:
+ 		proposez une combinaison à 4 chiffres (par défault), l'ordinateur doit la deviner en moins de 10 tours 
+		- mode duel:
+		 trouvez la combianison de l'ordinateur avant qu'il ne trouve la votre (4 chiffres par défault) en 10 tours
+2 - Compilation
+	* compilation avec un IDE
+
+	* compilation en ligne de commande
+3 - lancement du jeu
+	*lancement via l'IDE
+	*lancement en ligne de commande
