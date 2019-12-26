@@ -20,4 +20,7 @@ Le jeux comporte 3 modes
 	* compilation en ligne de commande
 3 - lancement du jeu
 	*lancement via l'IDE
+	 mode developpeur : pour lancer le jeu en mode developpeur renseigenrer l'argument -dev 
+
 	*lancement en ligne de commande
+	pour lancer le jeu en mode developpeur rajoute -dev à la commande java Ecsape_G

@@ -32,21 +32,24 @@ public class Duel extends Jeux {
 			logger.info("tour joueur");
 			tourJoueur = new Duel().nombreJoueur();
 			resultatJoueur = nombreIA.compare(tourJoueur);
-			logger.info("Tour Joueur: " + resultatJoueur);
+			logger.info("Résultat Joueur: " + resultatJoueur);
 			resultatIA = nombreJoueur.compare(tourIA);
 			logger.info("Tour IA " + nombreTentatives + " : " + tourIA.getValue()[0] + "/" + tourIA.getValue()[1] + "/"
 					+ tourIA.getValue()[2] + "/" + tourIA.getValue()[3]);
-			logger.info("résultat " + resultatIA);
+			logger.info("Résultat IA " + resultatIA);
 			tourIA = new Combinaison(resultatIA, tourIA);
-		} while (!tourIA.equals(nombreJoueur) && !tourJoueur.equals(nombreIA) || nombreTentatives > nombreTour);
-		logger.info("Tour IA " + nombreTentatives + " : " + tourIA.getValue()[0] + "/" + tourIA.getValue()[1] + "/"
-				+ tourIA.getValue()[2] + "/" + tourIA.getValue()[3]);
-		String joueur;
+		} while (!tourIA.equals(nombreJoueur) && !tourJoueur.equals(nombreIA) && nombreTentatives < nombreTour);
+		String joueur = "";
 		if (resultatJoueur.contentEquals("====")) {
 			joueur = "L'humain";
-		} else if (resultatIA.contentEquals("====")) {
+		}
+		if (nombreJoueur.compare(tourIA).contentEquals("====")) {
 			joueur = "L'IA";
-		} else {
+			nombreTentatives = nombreTentatives + 1;			
+			logger.info("Tour IA " + nombreTentatives + ": " + tourIA.getValue()[0] + "/" + tourIA.getValue()[1] + "/" + tourIA.getValue()[2] + "/"
+					+ tourIA.getValue()[3]);
+		}
+		if (!nombreJoueur.compare(tourIA).contentEquals("====") && !resultatJoueur.contentEquals("====")) {
 			joueur = "Personne";
 		}
 		endGame(joueur, nombreTentatives, nombreIA);

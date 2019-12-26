@@ -18,19 +18,20 @@ public class Defenseur extends Jeux {
 	public void gameLoop() {
 
 		logger.info("Veuillez saisir un nombre à " + nombreChiffre + " chiffres");
-		nombreTentatives = 0;
+		nombreTentatives = 1;
 		Combinaison nombreJoueur = new Defenseur().nombreJoueur();
 		Combinaison nombreIA = new Combinaison();
 		String resultat;
-		do {
-			nombreTentatives++;
+		while (!nombreIA.equals(nombreJoueur) && nombreTentatives < nombreTour) {
 			resultat = nombreJoueur.compare(nombreIA);
-			logger.info("Tour IA " + nombreTentatives + " : " + nombreIA.getValue()[0] + "/"
-					+ nombreIA.getValue()[1] + "/" + nombreIA.getValue()[2] + "/" + nombreIA.getValue()[3]);
+			logger.info("Tour IA " + nombreTentatives + " : " + nombreIA.getValue()[0] + "/" + nombreIA.getValue()[1]
+					+ "/" + nombreIA.getValue()[2] + "/" + nombreIA.getValue()[3]);
 			logger.info("résultat: " + resultat);
 			nombreIA = new Combinaison(resultat, nombreIA);
-		} while (!nombreIA.equals(nombreJoueur) && nombreTentatives < nombreTour);
-		logger.info("Tour IA " + nombreTentatives + " : " + nombreIA.getValue()[0] + "/" + nombreIA.getValue()[1]+ "/" + nombreIA.getValue()[2] + "/" + nombreIA.getValue()[3]);
+			nombreTentatives++;
+		}
+		logger.info("Tour IA " + nombreTentatives + " : " + nombreIA.getValue()[0] + "/" + nombreIA.getValue()[1] + "/"
+				+ nombreIA.getValue()[2] + "/" + nombreIA.getValue()[3]);
 		logger.info("résultat: " + nombreJoueur.compare(nombreIA));
 		String joueur = "L'IA";
 		endGame(joueur, nombreTentatives, nombreIA);

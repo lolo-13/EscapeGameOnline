@@ -1,6 +1,6 @@
 package fr.compainlaurie.escapegameonline;
-import java.util.Scanner;
 
+import java.util.Scanner;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 
