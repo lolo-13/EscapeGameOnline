@@ -19,7 +19,7 @@ Le jeux comporte 3 modes
   importer le projet dans l'IDE de votre choix
 	* compilation en ligne de commande
   placez vous dans le dossier contenant le code source 
-  puis saisissez la commande javac nomduprogramme.java
+  puis compilez tous les fichiers .java du projet
   
 3 - lancement du jeu
 	*lancement via l'IDE
@@ -27,6 +27,6 @@ Le jeux comporte 3 modes
    mode developpeur : pour lancer le jeu en mode developpeur renseigner l'argument -dev avant de lancer le main dans la console de l'IDE
 	*lancement en ligne de commande
   ouvrez l'invite de commnande 
-  puis lancer le programme avec la commande suivante: java nomduprogramme.class
-	pour lancer le jeu en mode developpeur rajoute -dev à la suite de la commande: java nomduprogramme.class -dev
+  puis lancer le programme à partir du Main
+  pour lancer le jeu en mode developpeur rajoutez -dev comme paramètre
 
