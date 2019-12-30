@@ -15,23 +15,27 @@ public class Challenger extends Jeux {
 
 	public void gameLoop() {
 
-		nombreTentatives = 1;
+		nombreTentatives = 0;
 		Combinaison nombreIA = new Combinaison();
 		Combinaison nombreJoueur;
 		String resultatJoueur;
-		String joueur = "l'humain";
+		String joueur = "";
 		if (modeDev)
 			logger.info("la solution est: " + nombreIA.afficheCombinaison());
 		do {
-			logger.info("Veuillez saisir un nombre à " + nombreChiffre + " chiffres");
 			nombreTentatives++;
+			logger.info("Tour " + nombreTentatives + "\n" + "Veuillez saisir un nombre à " + nombreChiffre + " chiffres");
 			nombreJoueur = new Challenger().nombreJoueur();
 			resultatJoueur = nombreIA.compare(nombreJoueur);
 			logger.info("résultat: "+resultatJoueur);
+			if(resultatJoueur.contentEquals("====")) {
+				joueur="l'humain";
+			}else {
+				joueur="L'IA";
+			}			
 			// } while (!resultat.contentEquals("===="));
-		} while (!nombreIA.equals(nombreJoueur) && nombreTentatives < nombreTour);
-		
-		endGame(joueur, nombreTentatives, nombreIA);
+		} while (!nombreIA.equals(nombreJoueur) && nombreTentatives < nombreTour);		
+		endGame(joueur, nombreTentatives, nombreIA, nom);
 	}
 
 }

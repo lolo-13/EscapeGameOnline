@@ -8,7 +8,7 @@ import fr.compainlaurie.escapegameonline.gamemode.Jeux;
 public class Duel extends Jeux {
 
 	private static Logger logger = LogManager.getLogger(Duel.class);
-
+	
 	public Duel() {
 		this.nom = "DUEL";
 		this.but = "Sois le premier à trouver";
@@ -19,7 +19,7 @@ public class Duel extends Jeux {
 		// TODO Auto-generated method stub
 
 		logger.info("Veuillez saisir un nombre à " + nombreChiffre + " chiffres");
-		nombreTentatives = 0;
+		nombreTentatives = 0;		
 		Combinaison nombreJoueur = new Duel().nombreJoueur();
 		Combinaison nombreIA = new Combinaison();
 		Combinaison tourJoueur;
@@ -38,10 +38,10 @@ public class Duel extends Jeux {
 					+ tourIA.getValue()[2] + "/" + tourIA.getValue()[3]);
 			logger.info("Résultat IA " + resultatIA);
 			tourIA = new Combinaison(resultatIA, tourIA);
-		} while (!tourIA.equals(nombreJoueur) && !tourJoueur.equals(nombreIA) && nombreTentatives < nombreTour);
+		} while (!tourIA.equals(nombreJoueur) && !tourJoueur.equals(nombreIA) && nombreTentatives <= nombreTour);
 		String joueur = "";
 		if (resultatJoueur.contentEquals("====")) {
-			joueur = "L'humain";
+			joueur = "l'humain";
 		}
 		if (nombreJoueur.compare(tourIA).contentEquals("====")) {
 			joueur = "L'IA";
@@ -49,9 +49,9 @@ public class Duel extends Jeux {
 			logger.info("Tour IA " + nombreTentatives + ": " + tourIA.getValue()[0] + "/" + tourIA.getValue()[1] + "/" + tourIA.getValue()[2] + "/"
 					+ tourIA.getValue()[3]);
 		}
-		if (!nombreJoueur.compare(tourIA).contentEquals("====") && !resultatJoueur.contentEquals("====")) {
+		if (!nombreJoueur.compare(tourIA).contentEquals("====") && !nombreIA.compare(tourJoueur).contentEquals("====")) {
 			joueur = "Personne";
 		}
-		endGame(joueur, nombreTentatives, nombreIA);
+		endGame(joueur, nombreTentatives, nombreIA, nom);
 	}
 }

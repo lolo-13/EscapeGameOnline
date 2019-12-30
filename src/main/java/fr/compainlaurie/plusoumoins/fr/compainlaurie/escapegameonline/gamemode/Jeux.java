@@ -36,7 +36,7 @@ public abstract class Jeux {
 			if (nombre.length() != nombreChiffre)
 				logger.info("\n" + "le nombre saisi ne contient pas le nombre de chiffre");
 			else
-				goodLength = true;				
+				goodLength = true;
 		}
 		return new Combinaison(nombre);
 	}
@@ -45,22 +45,25 @@ public abstract class Jeux {
 		logger.info("Mode " + nom + "\n" + "=============" + "\n" + but + " la combinaison");
 	}
 
-	public void endGame(String joueur, int nombreTentatives, Combinaison nombreIA) {
+	public void endGame(String joueur, int nombreTentatives, Combinaison nombreIA, String nom) {
 		String solution = "";
 		if (joueur == "l'humain") {
-			solution = nombreIA.afficheCombinaison();
-			if (nombreTentatives < nombreTour) {
-				logger.info(joueur + " a trouvé la combinaison en " + nombreTentatives + " tour(s)" + "\n"
-						+ joueur + " a gagné");
-			} else {
-				logger.info(joueur + " a perdu" + "\n" + "la solution est: " + solution);
+			if (nombreTentatives <= nombreTour) {
+				logger.info(joueur + " a gagné");
 			}
-		} else {
-			if (nombreTentatives < nombreTour) {
-				logger.info(joueur + " a trouvé la combinaison en " + nombreTentatives + " tour(s)" + "\n"
-						+ joueur + " a gagné");
-			} else
-				logger.info(joueur + " a perdu");
+		}
+		if (joueur == "L'IA") {
+			if (nombreTentatives <= nombreTour) {
+				logger.info(joueur + " a gagné");
+			}
+			if (nom == "Challenger" || nom == "DUEL") {
+				solution = nombreIA.afficheCombinaison();
+				logger.info("la solution est: " + solution);
+			}
+		}
+		if (joueur == "Personne") {
+			solution = nombreIA.afficheCombinaison();
+			logger.info("Personne n'a gagné" + "\n" + "la solution est: " + solution);
 		}
 	}
 
