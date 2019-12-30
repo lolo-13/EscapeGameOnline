@@ -1,4 +1,5 @@
 package fr.compainlaurie.escapegameonline.configuration;
+
 import org.apache.log4j.*;
 
 public class Logging {

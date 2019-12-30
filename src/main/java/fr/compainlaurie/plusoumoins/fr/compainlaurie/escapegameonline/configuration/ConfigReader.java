@@ -1,8 +1,8 @@
 package fr.compainlaurie.escapegameonline.configuration;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.Scanner;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 

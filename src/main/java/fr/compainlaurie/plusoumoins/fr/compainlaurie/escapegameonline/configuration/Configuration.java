@@ -1,4 +1,5 @@
 package fr.compainlaurie.escapegameonline.configuration;
+
 public class Configuration {
 	
 

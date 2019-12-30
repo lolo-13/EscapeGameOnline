@@ -8,6 +8,7 @@ import fr.compainlaurie.escapegameonline.configuration.Configuration;
 import fr.compainlaurie.escapegameonline.gamemode.GameFactory;
 import fr.compainlaurie.escapegameonline.gamemode.Jeux;
 
+
 public class Main {
 
 	private static Logger logger = LogManager.getLogger(Choix.class);

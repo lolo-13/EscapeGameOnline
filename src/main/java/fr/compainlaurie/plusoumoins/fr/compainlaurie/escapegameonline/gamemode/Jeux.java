@@ -1,7 +1,6 @@
 package fr.compainlaurie.escapegameonline.gamemode;
 
 import java.util.Scanner;
-
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import fr.compainlaurie.escapegameonline.Combinaison;
@@ -37,7 +36,7 @@ public abstract class Jeux {
 			if (nombre.length() != nombreChiffre)
 				logger.info("\n" + "le nombre saisi ne contient pas le nombre de chiffre");
 			else
-				goodLength = true;
+				goodLength = true;				
 		}
 		return new Combinaison(nombre);
 	}

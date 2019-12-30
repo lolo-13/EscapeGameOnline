@@ -30,7 +30,7 @@ public class Challenger extends Jeux {
 			logger.info("résultat: "+resultatJoueur);
 			// } while (!resultat.contentEquals("===="));
 		} while (!nombreIA.equals(nombreJoueur) && nombreTentatives < nombreTour);
-		nombreTentatives=nombreTentatives-1;
+		
 		endGame(joueur, nombreTentatives, nombreIA);
 	}
 

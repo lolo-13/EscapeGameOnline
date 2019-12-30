@@ -1,7 +1,5 @@
 package fr.compainlaurie.escapegameonline.gamemode.impl;
 
-import java.util.Arrays;
-import java.util.Scanner;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import fr.compainlaurie.escapegameonline.Combinaison;
